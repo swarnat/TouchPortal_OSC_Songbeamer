@@ -1,0 +1,129 @@
+{
+    "sdk": 3,
+    "version": 1005,
+    "name": "TP Songbeamer OSC Plugin",
+    "id": "TPOSCSongbeamer",
+    "plugin_start_cmd": "\"%TP_PLUGIN_FOLDER%TPOSCSongbeamer\\tposcsongbeamer.exe\"",
+    "configuration": {
+        "colorDark": "#23272A",
+        "colorLight": "#7289DA"
+    },
+    "settings": [
+        {
+            "name": "OSC IP",
+            "type": "text",
+            "default": "127.0.0.1",
+            "maxLength": 64
+        },
+        {
+            "name": "OSC Port",
+            "type": "text",
+            "default": "10023",
+            "maxLength": 5
+        }
+    ],
+    "categories": [
+        {
+            "id": "TPOSCSongbeamer",
+            "name": "Songbeamer OSC",
+            "imagepath": "%TP_PLUGIN_FOLDER%TPOSCSongbeamer/OSCGeneral.png",
+            "actions": [
+                {
+                    "id": "osc_songbeamer_state_black",
+                    "prefix": "Songbeamer",
+                    "name": "Black Screen",
+                    "type": "communicate"
+                },                
+                {
+                    "id": "osc_songbeamer_state_background",
+                    "prefix": "Songbeamer",
+                    "name": "Show Background",
+                    "type": "communicate"
+                },                
+                {
+                    "id": "osc_songbeamer_state_logo",
+                    "prefix": "Songbeamer",
+                    "name": "Show Logo",
+                    "type": "communicate"
+                },                
+                {
+                    "id": "osc_songbeamer_state_page",
+                    "prefix": "Songbeamer",
+                    "name": "Show text",
+                    "type": "communicate"
+                },                
+                {
+                    "id": "osc_update_currentsong_updatepage",
+                    "prefix": "Songbeamer",
+                    "name": "Update current page",
+                    "type": "communicate"
+                },                
+                
+                {
+                    "id": "osc_update_presentation_nextpage",
+                    "prefix": "Songbeamer",
+                    "name": "next page",
+                    "type": "communicate"
+                },            
+                {
+                    "id": "osc_update_presentation_prevpage",
+                    "prefix": "Songbeamer",
+                    "name": "previous page",
+                    "type": "communicate"
+                },  
+                {
+                    "id": "osc_update_video_state",
+                    "prefix": "Songbeamer",
+                    "name": "Update Video state",
+                    "type": "communicate",
+                    "tryInline": "true",                    
+                    "data": [
+                        {
+                          "id":"state",
+                          "type":"choice",
+                          "label":"State",
+                          "default":"stop",
+                          "valueChoices": [
+                              "stop",
+                              "play",
+                              "pause",
+                          ]
+                        },                    
+                    ]
+                },  
+                {
+                    "id": "osc_update_presentation_page",
+                    "prefix": "Songbeamer",
+                    "name": "open page",
+                    "type": "communicate",
+                    "format": "open page {$osc_general_path$} in current song",
+                    "tryInline": "true",                    
+                    "data": [
+                        {
+                            "id": "page",
+                            "type": "number",
+                            "label": "",
+                            "default": "1"
+                        }
+                    ]
+                    
+                },  
+                
+                {
+                    "id": "osc_update_playlist_next",
+                    "prefix": "Songbeamer",
+                    "name": "next Playlist entry",
+                    "type": "communicate"
+                },             
+                {
+                    "id": "osc_update_playlist_prev",
+                    "prefix": "Songbeamer",
+                    "name": "previous Playlist entry",
+                    "type": "communicate"
+                }             
+            ],
+            "states": [],
+            "events": []
+        }
+    ]
+}
