@@ -10,13 +10,13 @@
     },
     "settings": [
         {
-            "name": "OSC IP",
+            "name": "Songbeamer OSC IP",
             "type": "text",
             "default": "127.0.0.1",
             "maxLength": 64
         },
         {
-            "name": "OSC Port",
+            "name": "Songbeamer OSC Port",
             "type": "text",
             "default": "10023",
             "maxLength": 5
@@ -53,13 +53,6 @@
                     "type": "communicate"
                 },                
                 {
-                    "id": "osc_update_currentsong_updatepage",
-                    "prefix": "Songbeamer",
-                    "name": "Update current page",
-                    "type": "communicate"
-                },                
-                
-                {
                     "id": "osc_update_presentation_nextpage",
                     "prefix": "Songbeamer",
                     "name": "next page",
@@ -77,6 +70,7 @@
                     "name": "Update Video state",
                     "type": "communicate",
                     "tryInline": "true",                    
+                    "format": "Songbeamer: Change Video state to {$state$}",                    
                     "data": [
                         {
                           "id":"state",
@@ -96,7 +90,7 @@
                     "prefix": "Songbeamer",
                     "name": "open page",
                     "type": "communicate",
-                    "format": "open page {$osc_general_path$} in current song",
+                    "format": "Songbeamer: open page {$page$} in current song",
                     "tryInline": "true",                    
                     "data": [
                         {
@@ -122,7 +116,36 @@
                     "type": "communicate"
                 }             
             ],
-            "states": [],
+            "states": [
+                {
+                  "id":"songbeamer_current_page",
+                  "type":"text",
+                  "desc":"Contain current slide",
+                  "default":"",
+                  "parentGroup":"Presentation"
+                },
+                {
+                  "id":"songbeamer_current_filepath",
+                  "type":"text",
+                  "desc":"Contain current filepath",
+                  "default":"",
+                  "parentGroup":"Presentation"
+                },
+                {
+                  "id":"songbeamer_current_filename",
+                  "type":"text",
+                  "desc":"Contain current filename",
+                  "default":"",
+                  "parentGroup":"Presentation"
+                },         
+                {
+                  "id":"songbeamer_current_state",
+                  "type":"text",
+                  "desc":"Contain current view state",
+                  "default":"",
+                  "parentGroup":"Presentation"
+                }          
+            ],
             "events": []
         }
     ]

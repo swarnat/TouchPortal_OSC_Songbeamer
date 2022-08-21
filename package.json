@@ -1,6 +1,6 @@
 {
   "name": "tposcsongbeamer",
-  "version": "10000",
+  "version": "10100",
   "description": "Touch Portal Plugin for Songbeamer remote control over OSC",
   "bin": {
     "tposcsongbeamer": "src/index.js"
@@ -9,16 +9,20 @@
   "scripts": {
     "start": "node src/index.js",
     "pkg": "pkg .",
-    "pkg-win": "pkg --targets node12-win-x64 .",
-    "pkg-mac": "pkg --targets node12-macos-x64 .",
-    "build-win": "pkg --targets node12-win-x64 . && move tposcsongbeamer.exe base/Win/TPOSCSongbeamer/ && del Installers\\TPOSCSongbeamer-Win.tpp && cd base\\Win && node ../../bin/tp-packaging-win.js && del TPOSCSongbeamer\\tposcsongbeamer.exe",
-    "build-mac": "pkg --targets node12-macos-x64 . && move tposcsongbeamer base/Mac/TPOSCSongbeamer/ && del Installers\\TPOSCSongbeamer-Mac.tpp && cd base\\Mac && node ../../bin/tp-packaging-mac.js && del TPOSCSongbeamer\\tposcsongbeamer"
+    "pkg-win": "pkg --targets node16-win-x64 .",
+    "pkg-mac": "pkg --targets node16-macos-x64 .",
+    "build-win": "pkg --no-bytecode --targets node16-win-x64 . && move tposcsongbeamer.exe base/Win/TPOSCSongbeamer/ && del Installers\\TPOSCSongbeamer-Win.tpp && cd base\\Win && node ../../bin/tp-packaging-win.js && del TPOSCSongbeamer\\tposcsongbeamer.exe",
+    "build-mac": "pkg --targets node16-macos-x64 . && move tposcsongbeamer base/Mac/TPOSCSongbeamer/ && del Installers\\TPOSCSongbeamer-Mac.tpp && cd base\\Mac && node ../../bin/tp-packaging-mac.js && del TPOSCSongbeamer\\tposcsongbeamer"
   },
   "author": "Stefan Warnat",
   "license": "ISC",
   "pkg": {
     "scripts": [
       "src/**/*.js"
+    ],
+    "targets": [ 
+      "node16-win-x64", 
+      "node16-macos-x64" 
     ]
   },
   "dependencies": {
