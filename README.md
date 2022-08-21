@@ -1,12 +1,11 @@
-# Touch Portal Plugin to Interact with Open Sound Control/OSC APIs
+# Touch Portal Plugin to Interact with Songbeamer over OSC
 ![](https://img.shields.io/github/downloads/swarnat/TouchPortal_OSC_General/total)
 
 - [Touch Portal Plugin to Interact with OSC APIs](#touch-portal-plugin-to-interact-with-discord)
   - [Description](#description)
   - [ChangeLog](#changelog)
   - [Installation and Configuration](#installation-and-configuration)
-  - [Known Issues](#known-issues--solutions)
- - [Dependencies](#dependencies)
+- [Dependencies](#dependencies)
 - [Versioning](#versioning)
 - [Authors](#authors)
 - [License](#license)
@@ -15,39 +14,30 @@
 
 ## Description
 
-Control OSC cappable software / devices from your TouchPortal device.  
-
-Target of this repository / plugin is to provide a framework for more specific OSC plugins, which can control dedicated software, without to know the exact paths.  
-As example this plugin provide 3 actions to send any parameter to any URL, which can be configured in editor.
-
-Every Action you define within **entry.tp**, will be automatically call the function you define within the equal named file in **src/actions** Folder, where you also get the parameters.  
-See the existing actions as example.
+Since Version 5.16c, Songbeamer support remote controll over OSC protocol.
 
 ## ChangeLog
 ```
-v1.0.5
+v1.1.0
+  - Implemented multiple states
+v1.0.0
   - First version
 ```
 
 ## Installation and Configuration
-1. Download the .tpp file the installer for your OS [Windows](https://github.com/swarnat/TouchPortal_OSC_General/tree/master/Installers/OSCConnector-Win.tpp) OR [MacOS](https://github.com/swarnat/TouchPortal_OSC_General/tree/master/Installers/OSCConnector-Mac.tpp):
-1. Go to Touch Portal Settings (the gear icon)
-1. Go To Plug-ins
-1. Click the Import Plug-in button
-1. Navigate to the downloaded tpp file, select it and press Open
-1. A popup should tell you Successfully Imported plugin
-   1. If this is your first time importing, you will be asked To Trust the Plugin, to prevent this from popping up each time you start Touch Portal, click Trust Always
-1. Now Select Touch Portal OSC General Plugin in the dropdown on the Plug-ins settings page
-1. Configure your OSC Server IP and Port
-
-## Known Issues & Solutions
-1. **Float32** - Because NodeJS internally works with Float64, but OSC only with Float32, floats are rounded
+1. Create a Marco in Songbeamer with the content "inisfs.osc.enabled := true;" to enable OSC and restart Songbeamer
+2. Download tpp File for your Operation system and install the plugin into TouchPortal
+3. Default values should be correct by default, when you don't adjust port settings
+4. Import the demo page "Songbeamer-Demopage.tpz" from this repository to get an overview about functions
 
 # Dependencies
+
+This list describe libraries, which are used during development of this project.
+
  - [touchportal-api](https://www.npmjs.com/package/touchportal-api)
  - [archiver](https://www.npmjs.com/package/archiver)
  - [node-osc](https://www.npmjs.com/package/node-osc)
- - [osc-min](https://www.npmjs.com/package/osc-min)
+ - [osc](https://www.npmjs.com/package/osc)
  - [require-dir](https://www.npmjs.com/package/require-dir)
 
 # Versioning
