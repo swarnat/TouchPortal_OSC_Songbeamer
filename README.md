@@ -28,7 +28,7 @@ v1.0.0
 1. Create a Marco in Songbeamer with the content "inisfs.osc.enabled := true;" to enable OSC and restart Songbeamer
 2. Download tpp File for your Operation system and install the plugin into TouchPortal
 3. Default values should be correct by default, when you don't adjust port settings
-4. Import the demo page "Songbeamer-Demopage.tpz" from this repository to get an overview about functions
+4. Import the demo page [Songbeamer-Demopage.tpz(https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Songbeamer-Demopage.tpz) to get an overview about functions
 
 # Dependencies
 
