@@ -1,5 +1,5 @@
 # Touch Portal Plugin to Interact with Songbeamer over OSC
-![](https://img.shields.io/github/downloads/swarnat/TouchPortal_OSC_General/total)
+![](https://img.shields.io/github/downloads/swarnat/TouchPortal_OSC_Songbeamer/total)
 
 - [Touch Portal Plugin to Interact with OSC APIs](#touch-portal-plugin-to-interact-with-discord)
   - [Description](#description)
