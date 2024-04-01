@@ -11,8 +11,8 @@ module.exports = TPClient;
 
 var oscAvailableActions = requireDir(__dirname + "/../actions");
 
-logIt('INFO','Available Actions:');
-logIt('INFO',Object.keys(oscAvailableActions).join(', '));
+logIt('INFO', 'Available Actions:');
+logIt('INFO', "\n" + Object.keys(oscAvailableActions).join("\n"));
 
 TPClient.on("Action", async (message) => {
 

@@ -28,7 +28,7 @@
   "dependencies": {
     "osc": "^2.4.3",
     "require-dir": "^1.2.0",
-    "touchportal-api": "^3.1.2"
+    "touchportal-api": "^3.3.0"
   },
   "devDependencies": {
     "archiver": "^5.3.1",

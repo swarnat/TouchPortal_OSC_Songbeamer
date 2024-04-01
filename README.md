@@ -14,7 +14,7 @@
 
 ## Description
 
-Since Version 5.16c, Songbeamer support remote controll over OSC protocol.
+Since Version 5.16c, Songbeamer support remote controll over OSC protocol. This Touch Portal use this interface to control Songbeamer.
 
 ## ChangeLog
 ```
@@ -25,8 +25,8 @@ v1.0.0
 ```
 
 ## Installation and Configuration
-1. Create a Marco in Songbeamer with the content `inisfs.osc.enabled := true;` to enable OSC and restart Songbeamer
-2. Download tpp File from Release for your pperation system and install the plugin into TouchPortal
+1. Create a Marco in Songbeamer with the content `inisfs.osc.enabled := true;` to enable OSC and restart Songbeamer after run this macro
+2. Download tpp File from Release for your operation system and install the plugin into TouchPortal
 3. Default values should be correct by default, when you don't adjust port settings
 4. Import the demo page [Songbeamer-Demopage.tpz(https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Songbeamer-Demopage.tpz) to get an overview about functions
 
@@ -49,6 +49,16 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 - **Stefan Warnat** - _Initial work_ - [swarnat](https://github.com/swarnat)
 
 This plugin heavily make use of the NodeJS SDK from **Jameson Allen** - [Spdermn02](https://github.com/spdermn02)
+
+# Touch Portal Pages
+
+You can import the file "[Songbeamer-Pages.tpz2](https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Songbeamer-Pages.tpz2)" to import two prepared pages into Touch Portal.
+
+## Full page
+
+![full Songbeamer page](https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Page.png)
+![smartphone Songbeamer page](https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Page-Smartphone.png)
+
 
 # License
 
