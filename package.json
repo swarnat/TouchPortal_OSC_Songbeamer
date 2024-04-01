@@ -1,6 +1,6 @@
 {
   "name": "tposcsongbeamer",
-  "version": "10100",
+  "version": "10200",
   "description": "Touch Portal Plugin for Songbeamer remote control over OSC",
   "bin": {
     "tposcsongbeamer": "src/index.js"

@@ -57,6 +57,9 @@ You can import the file "[Songbeamer-Pages.tpz2](https://github.com/swarnat/Touc
 ## Full page
 
 ![full Songbeamer page](https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Page.png)
+
+## Smartphone page
+
 ![smartphone Songbeamer page](https://github.com/swarnat/TouchPortal_OSC_Songbeamer/raw/main/Page-Smartphone.png)
 
 
