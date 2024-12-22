@@ -1,0 +1,102 @@
+{
+    "sdk": 3,
+    "version": 1005,
+    "name": "OSC General Plugin",
+    "id": "OSCConnector",
+    "plugin_start_cmd": "sh %TP_PLUGIN_FOLDER%OSCConnector/start_oscconnector.sh",
+    "configuration": {
+        "colorDark": "#23272A",
+        "colorLight": "#7289DA"
+    },
+    "settings": [
+        {
+            "name": "OSC IP",
+            "type": "text",
+            "default": "127.0.0.1",
+            "maxLength": 64
+        },
+        {
+            "name": "OSC Port",
+            "type": "text",
+            "default": "1",
+            "maxLength": 5
+        }
+    ],
+    "categories": [
+        {
+            "id": "OSCConnector",
+            "name": "OSC General",
+            "imagepath": "%TP_PLUGIN_FOLDER%OSCConnector/OSCGeneral.png",
+            "actions": [
+                {
+                    "id": "osc_general_string",
+                    "prefix": "OSC:",
+                    "name": "Send String command",
+                    "type": "communicate",
+                    "tryInline": "true",
+                    "format": "OSC: Send String command {$osc_general_path$} Parameter {$osc_general_data$}",
+                    "data": [
+                        {
+                            "id": "osc_general_path",
+                            "type": "text",
+                            "label": "Path",
+                            "default": ""
+                        },
+                        {
+                            "id": "osc_general_data",
+                            "type": "text",
+                            "label": "Parameter",
+                            "default": ""
+                        }
+                    ]
+                },                
+                {
+                    "id": "osc_general_float",
+                    "prefix": "OSC:",
+                    "name": "Send Float command",
+                    "type": "communicate",
+                    "tryInline": "true",
+                    "format": "OSC: Send Float command {$osc_general_path$} Parameter {$osc_general_data$}",
+                    "data": [
+                        {
+                            "id": "osc_general_path",
+                            "type": "text",
+                            "label": "Path",
+                            "default": ""
+                        },
+                        {
+                            "id": "osc_general_data",
+                            "type": "number",
+                            "label": "Parameter",
+                            "default": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "osc_general_int",
+                    "prefix": "OSC:",
+                    "name": "Send Integer command",
+                    "type": "communicate",
+                    "tryInline": "true",
+                    "format": "OSC: Send Int command {$osc_general_path$} Parameter {$osc_general_data$}",
+                    "data": [
+                        {
+                            "id": "osc_general_path",
+                            "type": "text",
+                            "label": "Path",
+                            "default": ""
+                        },
+                        {
+                            "id": "osc_general_data",
+                            "type": "number",
+                            "label": "Parameter",
+                            "default": 0
+                        }
+                    ]
+                }
+            ],
+            "states": [],
+            "events": []
+        }
+    ]
+}
