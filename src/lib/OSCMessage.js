@@ -26,6 +26,21 @@ module.exports = function(path) {
             value: value
         });
     }
+    
+    /**
+     * Another int parameter should send with OSC message
+     * @param {int} value 
+     */
+    this.addByteParameter = function(value) {
+        if(value < 0 || value > 255) {
+            throw new RangeError("value of byte must between or equal 0 and 255")
+        }
+        
+        currentArguments.push({
+            type: 'i',
+            value: value
+        });
+    }
 
     /**
      * Another float parameter should send with OSC message

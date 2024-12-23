@@ -1,260 +1,278 @@
 {
     "api": 7,
-    "version": 1005,
-    "name": "TP Songbeamer OSC Plugin",
-    "id": "TPOSCSongbeamer",
-    "plugin_start_cmd": "\"%TP_PLUGIN_FOLDER%TPOSCSongbeamer\\tposcsongbeamer.exe\"",
-    "configuration": {
-        "colorDark": "#23272A",
-        "colorLight": "#7289DA"
-    },
-    "settings": [
-        {
-            "name": "Songbeamer OSC IP",
-            "type": "text",
-            "default": "127.0.0.1",
-            "maxLength": 64
-        },
-        {
-            "name": "Songbeamer OSC Port",
-            "type": "text",
-            "default": "10023",
-            "maxLength": 5
-        }
-    ],
     "categories": [
         {
-            "id": "TPOSCSongbeamer",
-            "name": "Songbeamer OSC",
-            "imagepath": "%TP_PLUGIN_FOLDER%TPOSCSongbeamer/OSCGeneral.png",
             "actions": [
                 {
                     "id": "osc_songbeamer_state_black",
                     "name": "Black Screen",
                     "type": "communicate"
-                },                
+                },
                 {
                     "id": "osc_songbeamer_state_background",
                     "name": "Show Background",
                     "type": "communicate"
-                },                
+                },
                 {
                     "id": "osc_songbeamer_state_logo",
                     "name": "Show Logo",
                     "type": "communicate"
-                },                
+                },
                 {
                     "id": "osc_songbeamer_state_page",
                     "name": "Show text",
                     "type": "communicate"
-                },                
-				{
-					"id": "osc_update_presentation_page",
-					"prefix": "Songbeamer",
-					"name": "open slide",
-					"type": "communicate",
-					"format": "Songbeamer: open page {$page$} in current song",
-					"data": [
-						{
-							"id": "page",
-							"type": "number",
-							"label": "",
-							"default": "1"
-						}
-					]
-					
-				},  
-				{
-					"id": "osc_message_set",
-					"prefix": "Songbeamer",
-					"name": "set audience message",
-					"type": "communicate",
-					"format": "Songbeamer: set message {$text$} to audience",
-					"data": [
-						{
-							"id": "text",
-							"type": "text",
-							"label": "",
-							"default": ""
-						}
-					]
-					
-				},  
-				{
-					"id": "osc_message_visibility",
-					"prefix": "Songbeamer",
-					"name": "audience message visibility",
-					"type": "communicate",
-					"format": "Songbeamer: {$visible$} message to audience",
-					"data": [
-						{
-                          "id":"visible",
-                          "type":"choice",
-                          "label":"Visibility",
-                          "default":"Show",
-                          "valueChoices": [
-                              "Show",
-                              "Hide"
-                          ]
-                        }  
-					]
-					
-				},
-				
-				{
-					"id": "osc_presentation_state",
-					"prefix": "Songbeamer",
-					"name": "presentation visibility",
-					"type": "communicate",
-					"format": "Songbeamer: Presentation is {$visible$}",
-					"data": [
-						{
-                          "id":"visible",
-                          "type":"choice",
-                          "label":"Visibility",
-                          "default":"Visible",
-                          "valueChoices": [
-                              "Visible",
-                              "Hidden"
-                          ]
-                        }  
-					]
-					
-				},  
-			
-				{
-					"id": "osc_update_presentation_nextpage",
-					"name": "next slide",
-					"type": "communicate"
-				},            
-			
-				{
-					"id": "osc_update_presentation_prevpage",
-					"prefix": "Songbeamer",
-					"name": "previous slide",
-					"type": "communicate"
-				},  
-					
+                },
                 {
-                    "id": "osc_update_video_state",
-                    "prefix": "Songbeamer",
-                    "name": "Update Video state",
-                    "type": "communicate",
-                    "tryInline": "true",                    
-                    "format": "Songbeamer: Change Video state to {$state$}",                    
                     "data": [
                         {
-                          "id":"state",
-                          "type":"choice",
-                          "label":"State",
-                          "default":"stop",
-                          "valueChoices": [
-                              "stop",
-                              "play",
-                              "pause"
-                          ]
-                        }                   
-                    ]
-                },  
-                {
-                    "id": "osc_songbeamer_presentation_primarylanguage",
-                    "prefix": "Songbeamer",
-                    "name": "set primary language",
-                    "type": "communicate",
-                    "format": "Songbeamer: set primary language to {$languageNumber$}",
-                    "tryInline": "true",                    
-                    "data": [
-                        {
-                            "id": "languageNumber",
-                            "type": "number",
-                            "label": "",
                             "default": "1",
-							"allowDecimals": "false",
-							"minValue": 1,
-							"maxValue": 4
+                            "id": "page",
+                            "label": "",
+                            "type": "number"
                         }
-                    ]
-                    
-                },  
-                {
-                    "id": "osc_songbeamer_presentation_language",
+                    ],
+                    "format": "Songbeamer: open page {$page$} in current song",
+                    "id": "osc_update_presentation_page",
+                    "name": "open slide",
                     "prefix": "Songbeamer",
-                    "name": "show languages",
-                    "type": "communicate",
-                    "format": "Songbeamer: define visible languages: {$lang-1$} {$lang-2$} {$lang-3$} {$lang-4$}",
+                    "type": "communicate"
+                },
+                {
                     "data": [
                         {
-                            "id": "lang-1",
-                            "type": "switch",
-                            "label": "1. Sprache",
-                            "default": "true"
-                        },
-                        {
-                            "id": "lang-2",
-                            "type": "switch",
-                            "label": "2. Sprache",
-                            "default": "true"
-                        },
-                        {
-                            "id": "lang-3",
-                            "type": "switch",
-                            "label": "3. Sprache",
-                            "default": "false"
-                        },
-                        {
-                            "id": "lang-4",
-                            "type": "switch",
-                            "label": "4. Sprache",
-                            "default": "false"
+                            "default": "",
+                            "id": "text",
+                            "label": "",
+                            "type": "text"
                         }
-                    ]
-                    
-                },  
-                
+                    ],
+                    "format": "Songbeamer: set message {$text$} to audience",
+                    "id": "osc_message_set",
+                    "name": "set audience message",
+                    "prefix": "Songbeamer",
+                    "type": "communicate"
+                },
+                {
+                    "data": [
+                        {
+                            "default": "Show",
+                            "id": "visible",
+                            "label": "Visibility",
+                            "type": "choice",
+                            "valueChoices": [
+                                "Show",
+                                "Hide"
+                            ]
+                        }
+                    ],
+                    "format": "Songbeamer: {$visible$} message to audience",
+                    "id": "osc_message_visibility",
+                    "name": "audience message visibility",
+                    "prefix": "Songbeamer",
+                    "type": "communicate"
+                },
+                {
+                    "data": [
+                        {
+                            "default": "Visible",
+                            "id": "visible",
+                            "label": "Visibility",
+                            "type": "choice",
+                            "valueChoices": [
+                                "Visible",
+                                "Hidden"
+                            ]
+                        }
+                    ],
+                    "format": "Songbeamer: Presentation is {$visible$}",
+                    "id": "osc_presentation_state",
+                    "name": "presentation visibility",
+                    "prefix": "Songbeamer",
+                    "type": "communicate"
+                },
+                {
+                    "id": "osc_update_presentation_nextpage",
+                    "name": "next slide",
+                    "type": "communicate"
+                },
+                {
+                    "id": "osc_update_presentation_prevpage",
+                    "name": "previous slide",
+                    "prefix": "Songbeamer",
+                    "type": "communicate"
+                },
+                {
+                    "data": [
+                        {
+                            "default": "stop",
+                            "id": "state",
+                            "label": "State",
+                            "type": "choice",
+                            "valueChoices": [
+                                "stop",
+                                "play",
+                                "pause"
+                            ]
+                        }
+                    ],
+                    "format": "Songbeamer: Change Video state to {$state$}",
+                    "id": "osc_update_video_state",
+                    "name": "Update Video state",
+                    "prefix": "Songbeamer",
+                    "tryInline": "true",
+                    "type": "communicate"
+                },
+                {
+                    "data": [
+                        {
+                            "allowDecimals": "false",
+                            "default": "1",
+                            "id": "languageNumber",
+                            "label": "",
+                            "maxValue": 4,
+                            "minValue": 1,
+                            "type": "number"
+                        }
+                    ],
+                    "format": "Songbeamer: set primary language to {$languageNumber$}",
+                    "id": "osc_songbeamer_presentation_primarylanguage",
+                    "name": "set primary language",
+                    "prefix": "Songbeamer",
+                    "tryInline": "true",
+                    "type": "communicate"
+                },
+                {
+                    "data": [
+                        {
+                            "default": "true",
+                            "id": "lang-1",
+                            "label": "1. Sprache",
+                            "type": "switch"
+                        },
+                        {
+                            "default": "true",
+                            "id": "lang-2",
+                            "label": "2. Sprache",
+                            "type": "switch"
+                        },
+                        {
+                            "default": "false",
+                            "id": "lang-3",
+                            "label": "3. Sprache",
+                            "type": "switch"
+                        },
+                        {
+                            "default": "false",
+                            "id": "lang-4",
+                            "label": "4. Sprache",
+                            "type": "switch"
+                        }
+                    ],
+                    "format": "Songbeamer: define visible languages: {$lang-1$} {$lang-2$} {$lang-3$} {$lang-4$}",
+                    "id": "osc_songbeamer_presentation_language",
+                    "name": "show languages",
+                    "prefix": "Songbeamer",
+                    "type": "communicate"
+                },
                 {
                     "id": "osc_update_playlist_next",
-                    "prefix": "Songbeamer",
                     "name": "next Playlist entry",
+                    "prefix": "Songbeamer",
                     "type": "communicate"
-                },             
+                },
                 {
                     "id": "osc_update_playlist_prev",
-                    "prefix": "Songbeamer",
                     "name": "previous Playlist entry",
+                    "prefix": "Songbeamer",
                     "type": "communicate"
-                }             
+                }
             ],
+            "events": [
+            ],
+            "id": "TPOSCSongbeamer",
+            "imagepath": "%TP_PLUGIN_FOLDER%TPOSCSongbeamer/OSCGeneral.png",
+            "name": "Songbeamer OSC",
             "states": [
                 {
-                  "id":"songbeamer_current_page",
-                  "type":"text",
-                  "desc":"Contain current slide",
-                  "default":"",
-                  "parentGroup":"Presentation"
+                    "default": "",
+                    "desc": "Contain current slide",
+                    "id": "songbeamer_current_page",
+                    "parentGroup": "Slides",
+                    "type": "text"
                 },
                 {
-                  "id":"songbeamer_current_filepath",
-                  "type":"text",
-                  "desc":"Contain current filepath",
-                  "default":"",
-                  "parentGroup":"Presentation"
+                    "default": "",
+                    "desc": "Contain slide count",
+                    "id": "songbeamer_slides_count",
+                    "parentGroup": "Slides",
+                    "type": "text"
                 },
                 {
-                  "id":"songbeamer_current_filename",
-                  "type":"text",
-                  "desc":"Contain current filename",
-                  "default":"",
-                  "parentGroup":"Presentation"
-                },         
+                    "default": "",
+                    "desc": "Contain current filepath",
+                    "id": "songbeamer_current_filepath",
+                    "parentGroup": "Presentation",
+                    "type": "text"
+                },
                 {
-                  "id":"songbeamer_current_state",
-                  "type":"text",
-                  "desc":"Contain current view state",
-                  "default":"",
-                  "parentGroup":"Presentation"
-                }          
-            ],
-            "events": []
+                    "default": "",
+                    "desc": "Contain current filename",
+                    "id": "songbeamer_current_filename",
+                    "parentGroup": "Presentation",
+                    "type": "text"
+                },
+                {
+                    "default": "",
+                    "desc": "Contain current playlist elements",
+                    "id": "songbeamer_playlist",
+                    "parentGroup": "Playlist",
+                    "type": "text"
+                },
+                {
+                    "default": "",
+                    "desc": "Contain next playlist element",
+                    "id": "songbeamer_playlist_next",
+                    "parentGroup": "Playlist",
+                    "type": "text"
+                },
+                {
+                    "default": "",
+                    "desc": "Contain previous playlist element",
+                    "id": "songbeamer_playlist_prev",
+                    "parentGroup": "Playlist",
+                    "type": "text"
+                },
+                {
+                    "default": "",
+                    "desc": "Contain current view state",
+                    "id": "songbeamer_current_state",
+                    "parentGroup": "Presentation",
+                    "type": "text"
+                }
+            ]
         }
-    ]
+    ],
+    "configuration": {
+        "colorDark": "#23272A",
+        "colorLight": "#7289DA"
+    },
+    "id": "TPOSCSongbeamer",
+    "name": "TP Songbeamer OSC Plugin",
+    "plugin_start_cmd": "\"%TP_PLUGIN_FOLDER%TPOSCSongbeamer\\tposcsongbeamer.exe\"",
+    "settings": [
+        {
+            "default": "127.0.0.1",
+            "maxLength": 64,
+            "name": "Songbeamer OSC IP",
+            "type": "text"
+        },
+        {
+            "default": "10023",
+            "maxLength": 5,
+            "name": "Songbeamer OSC Port",
+            "type": "text"
+        }
+    ],
+    "version": 1005
 }
