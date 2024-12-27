@@ -157,7 +157,7 @@ module.exports = {
     //     this.xremote();
     //   }, 9500);
       
-    //   this.xremote();
+      // this.xremote();
       requireDir(__dirname + "/../receiver");
     });
 
@@ -167,9 +167,11 @@ module.exports = {
   },
 
   xremote: function () {
+
     logIt("DEBUG", "OSC Client: Register /xremote");
     var newMessage = new OSCMessage("/xremote");
     sendMessage(newMessage);
+
   },
 
   /**

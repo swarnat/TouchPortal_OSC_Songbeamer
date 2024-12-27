@@ -27,7 +27,6 @@ module.exports = async function() {
         prevEntryString = " - None - "
     }
 
-    console.log({currentIndex, maxCount});
     if(currentIndex < maxCount - 1) {
         var newMessage = new OSCMessage('/playlist/items/' + (currentIndex + 1) + '/caption');
         nextEntry = await PromiseSender(newMessage)        
@@ -46,7 +45,6 @@ module.exports = async function() {
     // console.log("ready")
     // console.log(playlist);
     
-    console.log(prevEntryString, nextEntryString)
     TPClient.stateUpdate('songbeamer_playlist_prev', prevEntryString);
     TPClient.stateUpdate('songbeamer_playlist_next', nextEntryString);
 

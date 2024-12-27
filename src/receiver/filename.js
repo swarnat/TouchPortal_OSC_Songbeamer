@@ -10,7 +10,7 @@ const slidesLoader = require("../helper/slidesLoader");
 var lastValue = null;
 
 OSCClient.subscribe('current-filename', '/presentation/filename', (package) => {
-
+    
     if(lastValue !== package.args[0].value) {
         lastValue = package.args[0].value;
 

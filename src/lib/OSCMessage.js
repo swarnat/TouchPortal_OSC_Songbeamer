@@ -53,6 +53,28 @@ module.exports = function(path) {
         });
     }
 
+    /**
+     * a timecode parameter should send with OSC message
+     * @param {float} value 
+     */
+    this.addTimecodeParameter = function(value) {
+        currentArguments.push({
+            type: 'd',
+            value: value
+        });
+    }
+
+    /**
+     * a timecode parameter should send with OSC message
+     * @param {float} value 
+     */
+    this.addDoubleParameter = function(value) {
+        currentArguments.push({
+            type: 'd',
+            value: value
+        });
+    }
+
     
     this.getPath = function() {
         return path;
